@@ -3,7 +3,7 @@ import Features from './features/features';
 import Summary from './summary/summary';
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
-// import slugify from 'slugify';
+
 
 import './App.css';
 
@@ -109,12 +109,10 @@ class App extends Component {
           <form className="main__form">
             <h2>Customize your laptop</h2>
             <Features features={this.props.features} state={this.state.selected} updateFeature={this.updateFeature}/>
-            {/* {features} */}
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
             <Summary selected={this.state.selected} />
-            {/* {summary} */}
             <div className="summary__total">
               <div className="summary__total__label">Total</div>
               <div className="summary__total__value">
