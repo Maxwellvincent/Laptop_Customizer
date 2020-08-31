@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Features from './features/features'; 
-import Summary from './summary/summary';
+// import Features from './features/features'; 
+import MainFrom from './mainform/mainform';
+import MainSummary from './mainsummary/mainsummary';
+import Total from './total/total';
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
 
@@ -9,10 +11,10 @@ import './App.css';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
+// const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+//   style: 'currency',
+//   currency: 'USD'
+// });
 
 class App extends Component {
   state = {
@@ -106,19 +108,15 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            <Features features={this.props.features} state={this.state.selected} updateFeature={this.updateFeature}/>
-          </form>
+          <MainFrom features={this.props.features} state={this.state.selected} updateFeature={this.updateFeature}/>
+          {/* <form className="main__form">
+            {/* <h2>Customize your laptop</h2> */}
+            {/* <Features features={this.props.features} state={this.state.selected} updateFeature={this.updateFeature}/>
+          </form> */}
           <section className="main__summary">
             <h2>Your cart</h2>
-            <Summary selected={this.state.selected} />
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}
-              </div>
-            </div>
+            <MainSummary selected={this.state.selected} />
+            <Total total={total}/>
           </section>
         </main>
       </div>
