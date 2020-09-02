@@ -19,14 +19,14 @@ export default class Part extends React.Component{
             //   name={slugify(feature)}
                 checked={this.props.checked}
             //   checked={item.name === this.props.state[feature].name}
-                onChange={e => this.props.updateFeature(e.target.value,e.target)}
+                onChange={() => this.props.updateFeature(this.props.feature,this.props.item)}
             //   onChange={e => this.props.updateFeature(feature, item)}
             />
             <label 
             htmlFor={this.props.key}
             // htmlFor={itemHash} 
             className="feature__label">
-                {this.props.itemName} ({this.props.currency})
+                {this.props.item.name} ({this.props.currency})
               {/* {item.name} ({USCurrencyFormat.format(item.cost)}) */}
             </label>
           </div>
