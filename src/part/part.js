@@ -7,12 +7,13 @@ export default class Part extends React.Component{
     
     render(){
         return(
-            <div key={this.props.key}
+          <div
+            // key={this.props.hash}
             // key={itemHash} 
             className="feature__item">
             <input
               type="radio"
-              id={this.props.key}
+              id={this.props.hash}
             //   id={itemHash}
               className="feature__option"
               name={this.props.name}
@@ -23,7 +24,7 @@ export default class Part extends React.Component{
             //   onChange={e => this.props.updateFeature(feature, item)}
             />
             <label 
-            htmlFor={this.props.key}
+            htmlFor={this.props.hash}
             // htmlFor={itemHash} 
             className="feature__label">
                 {this.props.item.name} ({this.props.currency})

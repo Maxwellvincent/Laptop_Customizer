@@ -19,7 +19,8 @@ export default class Features extends React.Component {
             const options = this.props.features[feature].map(item => {
               const itemHash = slugify(JSON.stringify(item));
               return (
-                <Part key={itemHash} 
+                <Part key={itemHash}
+                  hash={itemHash} 
                   className="feature_item" 
                   name={slugify(feature)} 
                   checked={item.name === this.props.state[feature].name}
